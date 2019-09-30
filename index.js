@@ -1,147 +1,121 @@
-var playerResult1=0 ;
-var playerResult2=0 ;
+let player1 = 0;
+let player2 = 0;
 
+let cards = [1,2,3,4,5,6,7,8,9,10,11,12,13];
+let suit = ["hearts", "clubs", "diamonds", "spades"];
+let cardColors = ["red", "black"];
 
-function generate1() {                   // Randomly get card and type of card(Spades, Diamonds, Hearts & Clovers)
-  let min=2;
-  let max=14 ;
-  let typeCard="" ;
-  let colorCard="" ;
+function randomCard1() {
 
-      let colorCardNumber = Math.floor(Math.random() * 2) + 1;
-      switch(colorCardNumber) {
-        case 1:
-           colorCard="red"
-           break;
-        case 2:
-            colorCard="black"
-           break;
-      }
-
-      let typeCardNumber = Math.floor(Math.random() * 4) + 1;
-      switch(typeCardNumber) {
-        case 1:
-           typeCard="spades"
-           break;
-        case 2:
-            typeCard="diamonds"
-           break;
-         case 3:
-            typeCard="hearts"
-            break;
-        case 4:
-           typeCard="clovers"
-           break;
-     }
-
-      let card = Math.floor(Math.random() * (max - min + 1) + min);
-      switch(card) {
-        case 11:
-           card="J"
-            break;
-        case 12:
-           card="Q"
-            break;
-         case 13:
-            card="K"
-            break;
-         case 14:
-            card="A"
-            break;
-       // default:
-    }
-
-      document.querySelector("#cardnumber1").innerHTML = `${card}<p>${colorCard} ${typeCard}</p>`;
-      document.querySelector("#p1go").disabled = true;
-      playerResult1=card ;
-        console.log(card)
+let rando = cards[Math.floor(Math.random() * cards.length)];
+player1 = rando;
+if (rando == 1) {
+rando = "A";
+} else if (rando == 11) {
+rando = "J";
+} else if (rando == 12) {
+rando = "Q";
+} else if (rando == 13) {
+rando = "K";
 }
 
-function generate2() {                   // Randomly get card and type of card(Spades, Diamonds, Hearts & Clovers)
-  let min=2;
-  let max=14 ;
-  let typeCard2="" ;
-  let colorCard2="" ;
+let randomSuit = Math.floor (Math.random() * suit.length);
+if (randomSuit == 0) {
+randomSuit = "fa-heart"
+} else if (randomSuit == 1) {
+randomSuit = "fa-times"
+} else if (randomSuit == 2) {
+randomSuit = "fa-diamond"
+} else if (randomSuit == 3) {
+randomSuit = "fa-square"
+}
 
-      let colorCardNumber2 = Math.floor(Math.random() * 2) + 1;
-      switch(colorCardNumber2) {
-        case 1:
-           colorCard2="red"
-           break;
-        case 2:
-            colorCard2="black"
-           break;
-      }
+let randomColor = cardColors[Math.floor(Math.random() * cardColors.length)];
 
-      let typeCardNumber2 = Math.floor(Math.random() * 4) + 1;
-      switch(typeCardNumber2) {
-        case 1:
-           typeCard2="spades"
-           break;
-        case 2:
-            typeCard2="diamonds"
-           break;
-         case 3:
-            typeCard2="hearts"
-            break;
-        case 4:
-           typeCard2="clovers"
-           break;
-     }
 
-      let card2 = Math.floor(Math.random() * (max - min + 1) + min);
-      switch(card2) {
-        case 11:
-           card2="J"
-            break;
-        case 12:
-           card2="Q"
-            break;
-         case 13:
-            card2="K"
-            break;
-         case 14:
-            card2="A"
-            break;
-       // default:
-    }
+document.querySelector("#player1").style.color = randomColor;
 
-      document.querySelector("#cardnumber2").innerHTML = `${card2}<p>${colorCard2} ${typeCard2}</p>`;
-      document.querySelector("#p2go").disabled = true;
-      playerResult2=card2 ;
-      console.log(card2)
-check();
+if (randomColor == "red") {
+    document.querySelector('#player1').style.backgroundColor = "#000000";
+} else {
+    document.querySelector('#player1').style.backgroundColor = "#ff0000";
 }
 
 
-//console.log(playerResult1, playerResult2)
+document.querySelector('#player1').innerHTML = `<i class="fa ${randomSuit} fa-5x" aria-hidden="true"></i> <p class="cardValue">${rando}</p> <i class="fa ${randomSuit} fa-5x align-text-bottom suitRotate" aria-hidden="true"></i>`;
 
-var winner=0;
+checkWinner();
+}
 
-function check() {
+function randomCard2() {
 
-//console.log('checked')
+let rando = cards[Math.floor(Math.random() * cards.length)];
+player2 = rando;
+if (rando == 1) {
+rando = "A";
+} else if (rando == 11) {
+rando = "J";
+} else if (rando == 12) {
+rando = "Q";
+} else if (rando == 13) {
+rando = "K";
+}
+
+let randomSuit = Math.floor (Math.random() * suit.length);
+if (randomSuit == 0) {
+randomSuit = "fa-heart"
+} else if (randomSuit == 1) {
+randomSuit = "fa-times"
+} else if (randomSuit == 2) {
+randomSuit = "fa-diamond"
+} else if (randomSuit == 3) {
+randomSuit = "fa-square"
+}
+
+console.log(randomSuit);
+
+let randomColor = cardColors[Math.floor(Math.random() * cardColors.length)];
 
 
-if (playerResult1 > playerResult2) {
-    winner=playerResult1 ;
-    document.querySelector("#p1go").disabled = false ;
-    document.querySelector("#p2go").disabled = false ;
-    document.querySelector("#displaywinner").innerHTML = `${winner} <p> is the winner</p>` ;
-    console.log(winner);
-    winner= 0;
+document.querySelector("#player2").style.color = randomColor;
+
+if (randomColor == "red") {
+document.querySelector('#player2').style.backgroundColor = "#000000";
+} else {
+document.querySelector('#player2').style.backgroundColor = "#ff0000";
+}
+
+document.querySelector('#player2').innerHTML = `<i class="fa ${randomSuit} fa-5x" aria-hidden="true"></i> <p class="cardValue">${rando}</p> <i class="fa ${randomSuit} fa-5x align-text-bottom suitRotate" aria-hidden="true"></i>`;
+checkWinner();
+}
+
+function checkWinner() {
+
+let resetButton = `<button class="btn-danger btn-lg" onclick="reset()">Reset</button>`
+
+if (player1 > 0 && player2 > 0) {
 
 
- } else {
-        winner=playerResult2 ;
-        document.querySelector("#p1go").disabled = false ;
-        document.querySelector("#p2go").disabled = false ;
-        document.querySelector("#displaywinner").innerHTML = `${winner} <p> is the winner</p>` ;
-   console.log("else" + winner);
+let winningPlayer;
 
-        winner= 0;
+if (player1 > player2  ) {
 
+    document.querySelector('#winner').innerHTML = `P2 lost :(`
+    document.querySelector('#reset').innerHTML = resetButton
+} else {
+    document.querySelector('#winner').innerHTML = `P2 Won!`
+    document.querySelector('#reset').innerHTML = resetButton
+
+}
+}
 
 }
 
+function reset() {
+player1 = 0;
+player2 = 0;
+document.querySelector('#player1').innerHTML = ``;
+document.querySelector('#player2').innerHTML = ``;
+document.querySelector('#winner').innerHTML = ``
+document.querySelector('#reset').innerHTML = ``;
 }

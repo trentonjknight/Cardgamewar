@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <div class="container text-center m-3">
+    <div class="container text-center mx-auto">
 
         <div class="row">
 
@@ -28,10 +28,10 @@
 
         <div class="row">
             <div class="col">
-                <button onclick="generate1()" type="button" class="btn btn-success btn-lg" id="p1go" >Generate</button>
+                <button onclick="randomCard1()" type="button" class="btn btn-success btn-lg m-3">Player 1 Draw!</button>
             </div>
             <div class="col">
-                <button onclick="generate2()" type="button" class="btn btn-success btn-lg"id="p2go">Generate</button>
+                <button onclick="randomCard2()" type="button" class="btn btn-success btn-lg m-3">Player 2 Draw</button>
             </div>
         </div>
 
@@ -39,13 +39,13 @@
 
                    <div class="col"> <div class="card mx-auto p-2" style="width: 18rem; height: 18rem">
 
-                            <div class="text-left"> <i class="fas fa-heart fa-2x"> </i> </div>
+                            <!-- <div class="text-left"> <i class="fas fa-heart fa-2x"> </i> </div> -->
                             <div class="card-body">
                             <br>
                             <h1 class="card-text text-center" id="cardnumber1"></h1>
                             <br>
                             <div class="text-right">
-                            <i class="fas fa-heart fa-rotate-180 fa-2x"></i>
+                            <!-- <i class="fas fa-heart fa-rotate-180 fa-2x"></i> -->
                             </div>
                         </div>
 
@@ -54,14 +54,14 @@
 
                 <div class="col"><div class="card mx-auto p-2" style="width: 18rem; height: 18rem">
 
-                                <div class="text-left"> <i class="fas fa-heart fa-2x"> </i> </div>
+                                <!-- <div class="text-left"> <i class="fas fa-heart fa-2x"> </i> </div> -->
                                 <div class="card-body">
                                 <br>
                                 <h1 class="card-text" id="cardnumber2"></h1>
                                 <br>
 
                                 <div class="text-right">
-                                <i class="fas fa-heart fa-rotate-180 fa-2x"></i>
+                                <!-- <i class="fas fa-heart fa-rotate-180 fa-2x"></i> -->
                             </div>
                         </div>
                     </div>
@@ -72,12 +72,12 @@
         <div class="row m-6">
 
             <div class="col mt-4 ml-5" id="winner">
-                            <div class="alert alert-success" role="alert"> <h1>Congratulations</h1><span id="displaywinner"> is the winner! </div>
-
-
-
+                            <!-- <div class="alert alert-success" role="alert"> <h1>Congratulations</h1><span id="displaywinner"> is the winner! </div> -->
             </div>
 
+            <div class="col" id="reset">
+
+            </div>
         </div>
 
 
