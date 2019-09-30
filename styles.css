@@ -5,3 +5,12 @@ body{
     font-family: cursive;
     color:aquamarine;
 }
+.topLeftSuit{
+    float: left;
+    margin-bottom: 100px;
+}
+.bottomRightSuit{
+    margin-top: 60px;
+    transform: rotate(180deg);
+    margin-left: 75%;
+}

@@ -42,7 +42,7 @@ if (randomColor == "red") {
 }
 
 
-document.querySelector('#player1').innerHTML = `<p text-left>${randomSuit}</p> <p>${rando}</p> <p>${randomSuit}</p>`;
+document.querySelector('#player1').innerHTML = `<p class="topLeftSuit">${randomSuit}</p> <p>${rando}</p> <p class="bottomRightSuit">${randomSuit}</p>`;
 
 checkWinner();
 }
@@ -85,7 +85,7 @@ document.querySelector('#player2').style.backgroundColor = "#000000";
 document.querySelector('#player2').style.backgroundColor = "#ff0000";
 }
 
-document.querySelector('#player2').innerHTML = `<p>${randomSuit}</p> <p>${rando}</p> <p>${randomSuit}</p>`;
+document.querySelector('#player2').innerHTML = `<p class= "topLeftSuit">${randomSuit}</p> <p>${rando}</p> <p class="bottomRightSuit">${randomSuit}</p>`;
 checkWinner();
 }
 
