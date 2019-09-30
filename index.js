@@ -1,7 +1,22 @@
+var playerResult1=0 ;
+var playerResult2=0 ;
+
+
 function generate1() {                   // Randomly get card and type of card(Spades, Diamonds, Hearts & Clovers)
   let min=2;
   let max=14 ;
-  let typeCard=""
+  let typeCard="" ;
+  let colorCard="" ;
+
+      let colorCardNumber = Math.floor(Math.random() * 2) + 1;
+      switch(colorCardNumber) {
+        case 1:
+           colorCard="red"
+           break;
+        case 2:
+            colorCard="black"
+           break;
+      }
 
       let typeCardNumber = Math.floor(Math.random() * 4) + 1;
       switch(typeCardNumber) {
@@ -36,17 +51,27 @@ function generate1() {                   // Randomly get card and type of card(S
        // default:
     }
 
-      document.querySelector("#cardnumber1").innerHTML = `${card}<p>  ${typeCard}  </p>`;
-    //   document.getElementById("p1go").addEventListener("click", function(generate1){
-    //     generate1.preventDefault()
-    //   });
-
+      document.querySelector("#cardnumber1").innerHTML = `${card}<p>${colorCard} ${typeCard}</p>`;
+      document.querySelector("#p1go").disabled = true;
+      playerResult1=card ;
+        console.log(card)
 }
 
 function generate2() {                   // Randomly get card and type of card(Spades, Diamonds, Hearts & Clovers)
   let min=2;
   let max=14 ;
-  let typeCard2=""
+  let typeCard2="" ;
+  let colorCard2="" ;
+
+      let colorCardNumber2 = Math.floor(Math.random() * 2) + 1;
+      switch(colorCardNumber2) {
+        case 1:
+           colorCard2="red"
+           break;
+        case 2:
+            colorCard2="black"
+           break;
+      }
 
       let typeCardNumber2 = Math.floor(Math.random() * 4) + 1;
       switch(typeCardNumber2) {
@@ -81,9 +106,42 @@ function generate2() {                   // Randomly get card and type of card(S
        // default:
     }
 
-      document.querySelector("#cardnumber2").innerHTML = `${card2}<p>  ${typeCard2}  </p>`;
-    //   document.getElementById("p1go").addEventListener("click", function(generate1){
-    //     generate1.preventDefault()
-    //   });
+      document.querySelector("#cardnumber2").innerHTML = `${card2}<p>${colorCard2} ${typeCard2}</p>`;
+      document.querySelector("#p2go").disabled = true;
+      playerResult2=card2 ;
+      console.log(card2)
+check();
+}
+
+
+//console.log(playerResult1, playerResult2)
+
+var winner=0;
+
+function check() {
+
+//console.log('checked')
+
+
+if (playerResult1 > playerResult2) {
+    winner=playerResult1 ;
+    document.querySelector("#p1go").disabled = false ;
+    document.querySelector("#p2go").disabled = false ;
+    document.querySelector("#displaywinner").innerHTML = `${winner} <p> is the winner</p>` ;
+    console.log(winner);
+    winner= 0;
+
+
+ } else {
+        winner=playerResult2 ;
+        document.querySelector("#p1go").disabled = false ;
+        document.querySelector("#p2go").disabled = false ;
+        document.querySelector("#displaywinner").innerHTML = `${winner} <p> is the winner</p>` ;
+   console.log("else" + winner);
+
+        winner= 0;
+
+
+}
 
 }
