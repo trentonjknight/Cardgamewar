@@ -21,13 +21,13 @@ rando = "K";
 
 let randomSuit = Math.floor (Math.random() * suit.length);
 if (randomSuit == 0) {
-randomSuit = "fa-heart"
+randomSuit = "&hearts;"
 } else if (randomSuit == 1) {
-randomSuit = "fa-times"
+randomSuit = "&clubs;"
 } else if (randomSuit == 2) {
-randomSuit = "fa-diamond"
+randomSuit = "&diams;"
 } else if (randomSuit == 3) {
-randomSuit = "fa-square"
+randomSuit = "&spades;"
 }
 
 let randomColor = cardColors[Math.floor(Math.random() * cardColors.length)];
@@ -42,7 +42,7 @@ if (randomColor == "red") {
 }
 
 
-document.querySelector('#player1').innerHTML = `<i class="fa ${randomSuit} fa-5x" aria-hidden="true"></i> <p class="cardValue">${rando}</p> <i class="fa ${randomSuit} fa-5x align-text-bottom suitRotate" aria-hidden="true"></i>`;
+document.querySelector('#player1').innerHTML = `<p text-left>${randomSuit}</p> <p>${rando}</p> <p>${randomSuit}</p>`;
 
 checkWinner();
 }
@@ -63,13 +63,13 @@ rando = "K";
 
 let randomSuit = Math.floor (Math.random() * suit.length);
 if (randomSuit == 0) {
-randomSuit = "fa-heart"
+randomSuit = "&hearts;"
 } else if (randomSuit == 1) {
-randomSuit = "fa-times"
+randomSuit = "&clubs;"
 } else if (randomSuit == 2) {
-randomSuit = "fa-diamond"
+randomSuit = "&diams;"
 } else if (randomSuit == 3) {
-randomSuit = "fa-square"
+randomSuit = "&spades;"
 }
 
 console.log(randomSuit);
@@ -85,7 +85,7 @@ document.querySelector('#player2').style.backgroundColor = "#000000";
 document.querySelector('#player2').style.backgroundColor = "#ff0000";
 }
 
-document.querySelector('#player2').innerHTML = `<i class="fa ${randomSuit} fa-5x" aria-hidden="true"></i> <p class="cardValue">${rando}</p> <i class="fa ${randomSuit} fa-5x align-text-bottom suitRotate" aria-hidden="true"></i>`;
+document.querySelector('#player2').innerHTML = `<p>${randomSuit}</p> <p>${rando}</p> <p>${randomSuit}</p>`;
 checkWinner();
 }
 
@@ -99,11 +99,11 @@ if (player1 > 0 && player2 > 0) {
 let winningPlayer;
 
 if (player1 > player2  ) {
-
-    document.querySelector('#winner').innerHTML = `P2 lost :(`
+    document.querySelector('#winner').innerHTML = `Player 2 Lost`
     document.querySelector('#reset').innerHTML = resetButton
-} else {
-    document.querySelector('#winner').innerHTML = `P2 Won!`
+}
+else {
+    document.querySelector('#winner').innerHTML = `Player 2 Won!`
     document.querySelector('#reset').innerHTML = resetButton
 
 }
@@ -116,6 +116,6 @@ player1 = 0;
 player2 = 0;
 document.querySelector('#player1').innerHTML = ``;
 document.querySelector('#player2').innerHTML = ``;
-document.querySelector('#winner').innerHTML = ``
+document.querySelector('#winner').innerHTML = ``;
 document.querySelector('#reset').innerHTML = ``;
 }

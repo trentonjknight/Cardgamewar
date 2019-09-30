@@ -14,7 +14,7 @@
 
     <div class="container text-center mx-auto">
 
-        <div class="row">
+        <div class="row" id='heading'>
 
             <div class="col">
                 <h1> Player 1</h1>
@@ -37,31 +37,28 @@
 
  <div class="row m-6" id="cards">
 
-                   <div class="col"> <div class="card mx-auto p-2" style="width: 18rem; height: 18rem">
-
-                            <!-- <div class="text-left"> <i class="fas fa-heart fa-2x"> </i> </div> -->
-                            <div class="card-body">
+                   <div class="col"> <div class="card mx-auto" style="width: 18rem; height: 18rem">
+                            <div>
                             <br>
-                            <h1 class="card-text text-center" id="cardnumber1"></h1>
+                            <br>
+                            <h1 class="card-text text-center" id="player1"></h1>
+                            <br>
                             <br>
                             <div class="text-right">
-                            <!-- <i class="fas fa-heart fa-rotate-180 fa-2x"></i> -->
                             </div>
                         </div>
 
                         </div>
                     </div>
 
-                <div class="col"><div class="card mx-auto p-2" style="width: 18rem; height: 18rem">
-
-                                <!-- <div class="text-left"> <i class="fas fa-heart fa-2x"> </i> </div> -->
-                                <div class="card-body">
+                <div class="col"><div class="card mx-auto" style="width: 18rem; height: 18rem">
+                                <div>
                                 <br>
-                                <h1 class="card-text" id="cardnumber2"></h1>
                                 <br>
-
+                                <h1 class="card-text" id="player2"></h1>
+                                <br>
+                                <br>
                                 <div class="text-right">
-                                <!-- <i class="fas fa-heart fa-rotate-180 fa-2x"></i> -->
                             </div>
                         </div>
                     </div>
@@ -69,21 +66,17 @@
 
     </div>
 
-        <div class="row m-6">
+        <div class="row mx-auto">
 
-            <div class="col mt-4 ml-5" id="winner">
-                            <!-- <div class="alert alert-success" role="alert"> <h1>Congratulations</h1><span id="displaywinner"> is the winner! </div> -->
+            <div class="col mt-4 ml-5">
+                            <div class="alert alert-success" role="alert"> <h1>Congratulations</h1><span id="winner"> is the winner! </div>
             </div>
 
-            <div class="col" id="reset">
-
-            </div>
         </div>
 
-
-
-
-
+        <div class="row mx-auto text-center">
+            <div class="col mx-auto text-center" id="reset"></div>
+        </div>
 
 
     </div>
